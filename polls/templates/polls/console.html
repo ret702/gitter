@@ -1,0 +1,36 @@
+
+
+{% load static %}
+<html>
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+      <title>Gitter</title>
+	  
+	  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <script src="{% static 'js/termlib.js' %}"></script>   
+	   <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>   
+	   <script src="{% static 'js/termLibFunctions.js' %}"></script>   
+	   
+     
+      <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+	  
+   </head>
+   <body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFFF" vlink="#77dd11" text="#cccccc" marginwidth="0" marginheight="0" >
+		<form method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<input type="file" class="input btn-primary" id="myfile" name="myfile" multiple>
+			<button type="submit"  class="btn btn-primary">Upload</button>
+		</form>
+      <div id="termDiv" style="position: absolute; visibility: visible; z-index: 1">
+       {% csrf_token %}
+         <table cellspacing="0" cellpadding="1" border="0">
+		 
+	
+	  </table>
+	  </div>
+	  
+	  	 
+   </body>
+</html>
+
