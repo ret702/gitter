@@ -5,6 +5,7 @@ import base64
 from polls.forms import UploadFileForm
 from django.core.files.uploadedfile import UploadedFile
 import tempfile
+import os
 
 commands=[]
 g=Github()
@@ -82,6 +83,7 @@ def handle_uploaded_file(f):
     with open(file_path, 'r') as destination:
         data= destination.read()
         destination.close()
+    os.unlink(file_path)
     return data 
    
 
@@ -96,8 +98,6 @@ def showstaged():
         for filename in files:
             fileList+=filename +  " "
         if(fileList != ""):
-            print(files)
-            print(fileList)
             return {"result":fileList}
         else:
             return {"result":"No files staged"}
