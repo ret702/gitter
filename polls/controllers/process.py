@@ -54,8 +54,9 @@ def push():
                 base_tree = repo.get_git_tree(master_sha)
                 element_list = list()
                 data=""
-                for entry in files:
-                    element = InputGitTreeElement(entry, '100644', 'blob', handle_uploaded_file(entry))
+                for entry in files[:]:
+                    data=handle_uploaded_file(entry)
+                    element = InputGitTreeElement(entry, '100644', 'blob',data )
                     element_list.append(element)
                 tree = repo.create_git_tree(element_list, base_tree)
                 parent = repo.get_git_commit(master_sha)
@@ -82,8 +83,8 @@ def handle_uploaded_file(f):
     data=""
     with open(file_path, 'r') as destination:
         data= destination.read()
-        destination.close()
-    os.unlink(file_path)
+    os.remove(file_path)
+    files.remove(f)
     return data 
    
 

@@ -42,12 +42,10 @@ def process(data):
 
 
 def handle_uploaded_file(f):
-  
     file_path=tempfile.gettempdir()+"\\" +(f.name)
-    print(file_path)
     with open(file_path, 'wb+') as destination:
         destination.write(f.read())
-        destination.close()
+
 
 
 
