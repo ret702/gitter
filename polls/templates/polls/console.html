@@ -16,11 +16,11 @@
       <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 	  
    </head>
-   <body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFFF" vlink="#77dd11" text="#cccccc" marginwidth="0" marginheight="0" >
+   <body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFFF" vlink="#77dd11"  text="#cccccc" marginwidth="0" marginheight="0" >
 		<form method="post" enctype="multipart/form-data">
 			{% csrf_token %}
-			<input type="file" class="input btn-primary" id="myfile" name="myfile" multiple>
-			<button type="submit"  class="btn btn-primary">Upload</button>
+			<input type="file" class="input btn-primary" id="myfile" name="myfile" style="float:left ; margin:5px" multiple>
+			<button type="submit"  class="btn btn-primary" >Upload</button>
 		</form>
       <div id="termDiv" style="position: absolute; visibility: visible; z-index: 1">
        {% csrf_token %}

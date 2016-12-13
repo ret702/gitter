@@ -74,11 +74,22 @@ def push():
 def staged():
     return showstaged()
 
+
+
+def handle_uploaded_file(f):
+    file_path=tempfile.gettempdir()+"\\" +(f)
+    data=""
+    with open(file_path, 'r') as destination:
+        data= destination.read()
+        destination.close()
+    return data 
+   
+
 def showstaged():
     if(len(commands)==2):
         if(commands[1]=="clear"):
             global files
-            files=[]
+            files[:]=[]
             return {"result":"Staged files cleared"}
     else:
         fileList=""

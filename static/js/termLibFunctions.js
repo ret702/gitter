@@ -4,8 +4,8 @@
     "*************Commands*************",
 	"help -Prints the help page",
 	"login (username) (password)",
-	"push (repo) (commit message) (branch)",
-	"staged -Prints which files are staged for push",
+	"push (repo) (commit message) (branch)  -Pushes currently staged files to repo, type staged to see current file list",
+	"staged ( (optional arg) clear -Clears staged files) -Prints which files are staged for push",
 	"***********************************"
 	
   ];
@@ -22,10 +22,10 @@
              rows: 500,
              cols: 500,
              x: 0,
-             y: 75,
+             y: 50,
              termDiv: 'termDiv',
              bgColor: '#000000',
-             greeting: 'Welcome to Gitter %nEnter  A Command...  %nType help %nType commands for a list of commands%nType login (username) (password) to start %n%n',
+             greeting: 'Welcome to Gitter %n%nEnter  A Command...  %nType help %nType login (username) (password) to start %n%n',
              handler: termHandler,
              exitHandler: termExitHandler
          });
